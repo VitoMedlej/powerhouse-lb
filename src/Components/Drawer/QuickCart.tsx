@@ -6,7 +6,7 @@ import Divider from '@mui/material/Divider';
 
 import {CartContext} from '../../../pages/_app';
 import {IconButton, Typography} from '@mui/material';
-import {ImCancelCircle} from 'react-icons/im';
+import CancelPresentationIcon from '@mui/icons-material/CancelPresentation';
 import CartProduct from '../Products/CartProduct';
 
 import Btn from '../Btn/Btn';
@@ -73,9 +73,10 @@ export default function TemporaryDrawer() {
                              My Cart
                         </h2>
                         <IconButton onClick={toggleDrawer(false)}>
-                            <ImCancelCircle
-                                color='red'
-                                />
+                            <CancelPresentationIcon
+                                sx={{
+                                color: 'red'
+                            }}/>
                         </IconButton>
                     </Box>
                     <Box
@@ -107,13 +108,13 @@ export default function TemporaryDrawer() {
                             Checkout
                        </Btn>
                         <Btn 
-                        sx={{':hover':{background:'#1a4671',color:'white'}}}
+                        sx={{':hover':{background:'#935525',color:'white'}}}
                         onClick={()=>{setCartOpen(false),router.push('/category/products')}}
                         v2={true} >
                         Continue Shopping
                         </Btn>
                         <Btn
-                        sx={{color:'#1a4671',border:'none',':hover':{background:'white',color:'#1a4671'}}} 
+                        sx={{color:'blue',border:'none',':hover':{background:'white',color:'blue'}}} 
                         onClick={()=>{setCartOpen(false),router.push('/cart')}}
                         v2={true} >
                         View all

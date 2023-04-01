@@ -1,7 +1,8 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
-import {AiOutlineWhatsApp,AiOutlineInstagram,AiOutlineFacebook} from 'react-icons/ai';
-import {BsFacebook} from 'react-icons/bs';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 const Perks = () => {
     return (
@@ -37,7 +38,7 @@ const Perks = () => {
                     }}>Reach out to us through any of these support channels</span>
             </Box>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1em' }}>
-                {/* {[{title:'Phone Number',value:"76600541",isLink:false}, {isLink:true,title:'Instagram',value:'https://www.instagram.com/power_house_european/'}, {isLink:true,title:'Facebook',value:'https://www.facebook.com/online.european.outlet/'}].map(i => {
+                {/* {[{title:'Phone Number',value:"70873045",isLink:false}, {isLink:true,title:'Instagram',value:'https://www.instagram.com/power_house_european/'}, {isLink:true,title:'Facebook',value:'https://www.facebook.com/online.european.outlet/'}].map(i => {
                     return 
                 })} */}
 
@@ -49,7 +50,7 @@ const Perks = () => {
                         flexDirection: 'row'
                     }}>
                     <Box className='flexed'>
-                        <AiOutlineInstagram size='1.2em' color= '#fff'  />
+                        <InstagramIcon sx={{ color: '#fff' }} />
                     </Box>
                     <Box
                         sx={{
@@ -57,7 +58,7 @@ const Perks = () => {
                             alignItems: 'center',
                             justifyContent: 'center'
                         }}>
-                        {<a className='white' target={`_blank`} rel='noreferrer' style={{textDecoration:"none"}} href={"https://www.instagram.com/teen__tops___electronic/"}>
+                        {<a className='white' target={`_blank`} rel='noreferrer' style={{textDecoration:"none"}} href={"https://www.instagram.com/power_house_european/"}>
 
 
                             <Typography
@@ -83,7 +84,7 @@ const Perks = () => {
                         flexDirection: 'row'
                     }}>
                     <Box className='flexed'>
-                        <BsFacebook size='1.2em'  color= '#fff' />
+                        <FacebookIcon sx={{ color: '#fff' }} />
                     </Box>
                     <Box
                         sx={{
@@ -92,7 +93,7 @@ const Perks = () => {
                             justifyContent: 'center',
                             flexDirection: 'column'
                         }}>
-                        {<a className='white' target={`_blank`} style={{textDecoration:"none"}} rel='noreferrer' href={"https://www.facebook.com/profile.php?id=100076163602459"}>
+                        {<a className='white' target={`_blank`} style={{textDecoration:"none"}} rel='noreferrer' href={"https://www.facebook.com/online.european.outlet/"}>
 
 
                             <Typography
@@ -119,7 +120,7 @@ const Perks = () => {
                         flexDirection: 'row'
                     }}>
                     <Box className='flexed'>
-                        <AiOutlineWhatsApp size='1.2em' color= '#fff'  />
+                        <WhatsAppIcon sx={{ color: '#fff' }} />
                     </Box>
                     <Box
                         sx={{
@@ -128,7 +129,7 @@ const Perks = () => {
                             justifyContent: 'center',
                             flexDirection: 'column'
                         }}>
-                        {<a className='white' target={`_blank`} style={{textDecoration:"none"}} rel='noreferrer' href={"https://wa.me/96176600541"}>
+                        {<a className='white' target={`_blank`} style={{textDecoration:"none"}} rel='noreferrer' href={"https://wa.me/96170873045"}>
 
 
                             <Typography

@@ -1,9 +1,9 @@
 import {Box, IconButton, Tooltip, Typography} from '@mui/material'
 import {useContext, useState} from 'react'
 import {useRef} from 'react'
-import {MdFavoriteBorder} from 'react-icons/md';
-import {CiCircleRemove} from 'react-icons/ci';
-import {AiOutlineShoppingCart} from 'react-icons/ai';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useRouter } from 'next/router';
 // import Link from 'next/link';
 // import {loadState, pushState, saveState} from '../../../Utils/LocalstorageFn';
@@ -116,7 +116,7 @@ const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,classN
                                 boxShadow: '1px 1px 3px grey'
 
                             }}>
-                                <CiCircleRemove fontSize={'small'}/>
+                                <RemoveRedEyeIcon fontSize={'small'}/>
                             </IconButton>
                         </Tooltip>
 
@@ -130,7 +130,7 @@ const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,classN
                                 color: '#333',
                                 boxShadow: '1px 1px 3px grey'
                             }}>
-                                <MdFavoriteBorder fontSize={'small'}/>
+                                <FavoriteBorderIcon fontSize={'small'}/>
                             </IconButton>
                         </Tooltip>
 
@@ -145,6 +145,7 @@ const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,classN
                     pt: '.25em',
                     cursor:'pointer',
                     width:'100%',
+                    // wordBreak:'break-all',
                     mt: '.25em',
                     fontSize: '1em'
                 }}>{title}</Typography>
@@ -158,7 +159,12 @@ const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,classN
                     sx={{
                     fontSize: '1em'
                 }}>${price}</Typography>
-             
+                {/* boxShadow:'1px 1px 3px #0000005e', */}
+                {/* <IconButton
+                onClick={()=>addToCart(_id,{price,img,title,_id})}
+                sx={{':hover':{background:'#eaeaea'}}}>
+                    <ShoppingCartIcon />
+                </IconButton> */}
                 <Tooltip title='Add To Cart' placement='left'>
                 <Btn
                 v2={true}
@@ -168,7 +174,7 @@ const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,classN
                    className='flex items-center'
                    sx={{fontSize:'.75em',gap:'.3em'}}>
 
-                   add to cart <AiOutlineShoppingCart  />
+                   add to cart <ShoppingCartIcon fontSize='small' />
                    </Typography>
                 </Btn>
                 </Tooltip>

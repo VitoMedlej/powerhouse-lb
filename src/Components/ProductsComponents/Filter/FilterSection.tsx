@@ -1,6 +1,6 @@
 import {Box, Button,  TextField, Typography} from '@mui/material'
 import React, { useState } from 'react'
-import {AiOutlineSearch} from 'react-icons/ai';
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import FilterAccordion from '../FilterAccordion'
 import Btn from '../../Btn/Btn';
 import { server } from '../../../Utils/Server';
@@ -49,13 +49,11 @@ const FilterSection = ({handleReset,sx,setProducts}:any) => {
 <TextField
 onChange={(e)=>{console.log(e.target.value)}}
 size='small' placeholder='Search By Name' sx={{width:'100%'}}/>
-<AiOutlineSearch 
-className='icon-css'
-// sx={{
+<SearchOutlinedIcon sx={{
 
-// }}
-
-/>
+position: 'absolute',
+right: '2%',
+}}/>
 </Box>
                 <FilterAccordion
                 options={options}

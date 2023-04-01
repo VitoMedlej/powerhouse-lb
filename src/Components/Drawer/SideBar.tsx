@@ -8,13 +8,16 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+// import InboxIcon from '@mui/icons-material/MoveToInbox';
+// import MailIcon from '@mui/icons-material/Mail';
 import { Categories, DrawerContext } from '../../../pages/_app';
-import {MdOutlineBlender,MdPrecisionManufacturing,MdOutlineCoffeeMaker,MdOutlineCancel} from 'react-icons/md';
-import { IconButton } from '@mui/material';
+import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
+import CancelPresentationIcon from '@mui/icons-material/CancelPresentation';
+import CoffeeMakerIcon from '@mui/icons-material/CoffeeMaker';
+import { IconButton } from '@mui/material';import BlenderIcon from '@mui/icons-material/Blender';
 import { useRouter } from 'next/router';
-import {BiCategoryAlt} from 'react-icons/bi';
-
-
+import CategoryIcon from '@mui/icons-material/Category';
+// {setOpen,open} : {open: boolean, setOpen: any}
 export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
   let dupChars = cates && cates.filter((c : string, index) => {
     return cates.indexOf(c.trim()) === index;
@@ -50,9 +53,10 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
               <IconButton 
         
         onClick={toggleDrawer(false)}>
-                            <MdOutlineCancel
-                                  color= 'red'
-                              />
+                            <CancelPresentationIcon
+                                sx={{
+                                  color: 'red'
+                                }}/>
                         </IconButton>
                      
 
@@ -84,7 +88,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
           key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                {index % 2 === 0 ? <BiCategoryAlt /> : <MdPrecisionManufacturing />}
+                {index % 2 === 0 ? <CategoryIcon /> : <PrecisionManufacturingIcon />}
               </ListItemIcon>
               <ListItemText
               sx={{

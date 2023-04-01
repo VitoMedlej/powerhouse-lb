@@ -3,8 +3,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
-import {MdOutlineExpandMore} from 'react-icons/md';
-
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import SliderForm from './Filter/Forms/SliderForm';
 import SelectOneForm from './Filter/Forms/SelectOneForm';
 
@@ -65,7 +64,7 @@ export default function SimpleAccordion({options,setOptions}:any) {
                         sx={{
                         padding: 0
                     }}
-                        expandIcon={< MdOutlineExpandMore />}
+                        expandIcon={< ExpandMoreIcon />}
                         aria-controls="panel1a-content"
                         id="panel1a-header">
                         <Typography>{filter.title}</Typography>

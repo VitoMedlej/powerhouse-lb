@@ -26,11 +26,9 @@ const CategoryMenu = ({category}:{category:string[] | undefined}) => {
             ].map((item) => {
                 return <Box  sx={{cursor:'pointer'}} key={item} onClick={()=>router.push(`/category/${item.replace(/\s+/g, '-')}`)}>
                     {/* <Link key={item} > */}
-                        <Typography sx={{
-                            fontWeight: '600',
-                            color:"black",
+                        <Typography sx={{color:"#4b4b4b",
                         textTransform: 'capitalize'
-                    }} component='h4'>
+                    }} component='h5'>
                         {item}
                         </Typography>
 

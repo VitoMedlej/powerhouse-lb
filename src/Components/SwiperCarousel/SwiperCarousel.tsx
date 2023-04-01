@@ -25,8 +25,8 @@ const SwiperCarousel = ({data,      handleQuickView}:any) => {
                 clickable: true,
               }}
               autoplay={{
-                delay:  1000,
-                disableOnInteraction: true,
+                delay:  3000883,
+                disableOnInteraction: false,
               }}
               navigation={false}
             spaceBetween={8}

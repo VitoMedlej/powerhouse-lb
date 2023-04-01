@@ -74,9 +74,9 @@ export default function Home({data :staticData,category}:{category:any,data:any}
       <ProductCollection data={data && data.slice(0,20)} setQuickView={setQuickView} Collectiontitle='Latest Products '/>      
       
       <ProductCollection data={data && data.slice(20,30)} setQuickView={setQuickView} Collectiontitle='Top Sellers'/>      
-      <FullscreenPoster img='https://contentgrid.thdstatic.com/hdus/en_US/DTCCOMNEW/fetch/NexGen/ContentPage/SBS22-ASP-Hero-DSK-A.png'/>
+      {/* <FullscreenPoster img='https://contentgrid.thdstatic.com/hdus/en_US/DTCCOMNEW/fetch/NexGen/ContentPage/SBS22-ASP-Hero-DSK-A.png'/> */}
       <ProductCollection data={data && data.slice(30,45)} setQuickView={setQuickView} Collectiontitle='Recommended Products '/>      
-      <CategoryList/>
+      {/* <CategoryList/> */}
         { data && data?.slice(12,16)?.length > 0 &&
 
           <ProductCollection data={data && data.slice(45,55)} setQuickView={setQuickView} Collectiontitle='Best Of The Best'/>      

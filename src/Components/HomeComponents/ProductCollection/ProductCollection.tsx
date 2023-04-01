@@ -76,7 +76,7 @@ const ProductCollection = ({sx,Collectiontitle,data,setQuickView} : {
             }}>
                 <SwiperCarousel
                       handleQuickView={handleQuickView}
-                data={data && data.length >0 && data?.slice(0,4)}/>
+                data={data && data.length >0 && data?.slice(0,20)}/>
             </Box>
             <Link  href='/category/products' className="decor-none">
 

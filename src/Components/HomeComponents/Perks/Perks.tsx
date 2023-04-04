@@ -58,7 +58,7 @@ const Perks = () => {
                             alignItems: 'center',
                             justifyContent: 'center'
                         }}>
-                        {<a className='white' target={`_blank`} rel='noreferrer' style={{textDecoration:"none"}} href={"https://www.instagram.com/power_house_european/"}>
+                        {<a className='white' target={`_blank`} rel='noreferrer' style={{textDecoration:"none"}} href={"https://www.instagram.com/powerhouse_european"}>
 
 
                             <Typography
@@ -93,7 +93,7 @@ const Perks = () => {
                             justifyContent: 'center',
                             flexDirection: 'column'
                         }}>
-                        {<a className='white' target={`_blank`} style={{textDecoration:"none"}} rel='noreferrer' href={"https://www.facebook.com/online.european.outlet/"}>
+                        {<a className='white' target={`_blank`} style={{textDecoration:"none"}} rel='noreferrer' href={"https://www.facebook.com/profile.php?id=100088170621504"}>
 
 
                             <Typography

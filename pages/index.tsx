@@ -31,7 +31,7 @@ export default function Home({data :staticData,category}:{category:any,data:any}
     return (
     <>
       <Head>
-        <title>Powerhouse electronics | Buy European electronics and home appliances in Lebanon</title>
+        <title>Power House Store | Buy European electronics and home appliances in Lebanon</title>
         <meta name="robots" content="index,follow"/>
 {/* <meta name="description" content="Power house provide a wide range of European electronics (stock and new)" /> */}
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
@@ -49,17 +49,17 @@ export default function Home({data :staticData,category}:{category:any,data:any}
 <link rel="alternate" href="https://powerhouse-lb.com/" hrefLang="en"/>
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Powerhouse electronics | Buy European electronics and home appliances in Lebanon" />
+<meta property="og:title" content="Power House Store | Buy European electronics and home appliances in Lebanon" />
 <meta property="og:url" content="https://powerhouse-lb.com/" />
-<meta property="og:site_name" content="Power house" />
+<meta property="og:site_name" content="Power House Store" />
 <meta property="og:image" content="https://ucarecdn.com/fed22e72-ef03-4446-b3a4-ab436a38781a/00301.jpg" />
 {/* <meta property="og:description" content="Power house provide a wide range of European electronics (stock and new)" /> */}
      
 <meta name="og:description" content={`
-        Powerhouse electronics is your destination to buy european electronics and home appliances online in Lebanon. Best online shopping store for the latest electronics and home appliances from all brands. We Deliver anywhere in Lebanon
+        Power House Store is your destination to buy european electronics and home appliances online in Lebanon. Best online shopping store for the latest electronics and home appliances from all brands. We Deliver anywhere in Lebanon
         `} />
        <meta name="description" content={`
-        Powerhouse electronics is your destination to buy european electronics and home appliances online in Lebanon. Best online shopping store for the latest electronics and home appliances from all brands. We Deliver anywhere in Lebanon
+        Power House Store is your destination to buy european electronics and home appliances online in Lebanon. Best online shopping store for the latest electronics and home appliances from all brands. We Deliver anywhere in Lebanon
         `} />
         <meta name="viewport" content="width=device-width, initial-scale=1" /> 
       </Head>

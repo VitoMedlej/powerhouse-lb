@@ -17,7 +17,7 @@ const Footer = () => (
             </Link>
           </div>
           <Typography component='h1' sx={{ fontSize: '.9em' }}  className='footer-p white'>
-            We are Powerhouse european electronics supplier based in Lebanon, we sell various products of any house product you can think of, we deliver to all lebanon
+            We are Power House Store european electronics supplier based in Lebanon, we sell various products of any house product you can think of, we deliver to all lebanon
           </Typography>
           {/* <ul className="site-footer__social-networks">
           <li><a href="https://www.facebook.com/profile.php?id=100063581229923" rel="noreferrer" target='_blank'><i className="icon-facebook"></i></a></li>
@@ -45,9 +45,9 @@ const Footer = () => (
             <li className='link-title'>Contact</li>
             <li><a href="#"> Lebanon/Beirut Online</a></li>
             
-            <li><a href="https://www.facebook.com/online.european.outlet/" target="_blank" rel="noreferrer" >Facebook</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=100088170621504" target="_blank" rel="noreferrer" >Facebook</a></li>
 
-            <li><a href="https://www.instagram.com/power_house_european/" target="_blank" rel="noreferrer" >@power_house_european</a></li>
+            <li><a href="https://www.instagram.com/powerhouse_european" target="_blank" rel="noreferrer" >@power_house_european</a></li>
             <li><a href={'https://wa.me/70873045'} rel="noreferrer" target='_blank' >{` +961 70873045`}</a></li>
           </ul>
         </div>

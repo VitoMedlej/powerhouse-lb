@@ -72,12 +72,12 @@ export default function Navbar() {
                         // right: '50%',
                         // transform: 'translateX(50%)'
                         // ,
-                        width:'95px'
+                        maxWidth:'180px'
                     }}>
                         <Link href='/' color='inherit'>
                             <img
                             className='img'
-                            src="https://ucarecdn.com/1a583360-d59b-465b-b237-bcd749db05d4/d5115caa07cd46c18b86b85f7f0d263a.jpeg"
+                            src="https://ucarecdn.com/3b40bedc-0aa3-4247-a196-fd05de4d4f87/003011.jpg"
                             alt="Powerhouse electronics eshop logo"/>
                         </Link>
                     </Box>

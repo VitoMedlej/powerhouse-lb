@@ -52,7 +52,7 @@ export default function Home({data :staticData,category}:{category:any,data:any}
 <meta property="og:title" content="Powerhouse electronics | Buy European electronics and home appliances in Lebanon" />
 <meta property="og:url" content="https://powerhouse-lb.com/" />
 <meta property="og:site_name" content="Power house" />
-<meta property="og:image" content="https://ucarecdn.com/40091a81-e9c2-4931-9192-2613a81bbf09/" />
+<meta property="og:image" content="https://ucarecdn.com/fed22e72-ef03-4446-b3a4-ab436a38781a/00301.jpg" />
 {/* <meta property="og:description" content="Power house provide a wide range of European electronics (stock and new)" /> */}
      
 <meta name="og:description" content={`

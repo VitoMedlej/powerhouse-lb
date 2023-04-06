@@ -7,13 +7,13 @@ const Footer = () => (
     <div className="container " style={{color:'white',background:'black'}}>
       <div className="site-footer__top">
         <div className="site-footer__description">
-          <div className='logos cursor'>
+          <div className='logos cursor' style={{maxWidth:'180px'}}>
 
             <Link href="/">
               {/* <a><h1 className="site-logo"><Logo />E-Shop</h1></a> */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675357773/logo_ghli5e.jpg */}
               {/* https://res.cloudinary.com/dwxm8f25f/image/upload/v1675713948/logo_sktnut_1_jwy2hk.png */}
-              <img className='img' src='https://ucarecdn.com/1a583360-d59b-465b-b237-bcd749db05d4/d5115caa07cd46c18b86b85f7f0d263a.jpeg' alt="Powerhouse-lb Logo" />
+              <img className='img' src='https://ucarecdn.com/3b40bedc-0aa3-4247-a196-fd05de4d4f87/003011.jpg' alt="Powerhouse-lb Logo" />
             </Link>
           </div>
           <Typography component='h1' sx={{ fontSize: '.9em' }}  className='footer-p white'>

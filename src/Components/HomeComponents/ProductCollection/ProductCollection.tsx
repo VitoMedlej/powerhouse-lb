@@ -25,14 +25,14 @@ const ProductCollection = ({sx,Collectiontitle,data,setQuickView} : {
     return (
         <Box
             sx={{
-            maxWidth: 'lg',
+            maxWidth: 'lg', 
             
             margin: '1em auto',
             my: '3em',
             ...sx,
         }}>
             <Box
-                sx={{
+                sx={{ 
                 padding: '.5em',
                 fontSize: '1.75em',
                 fontWeight: '500'
@@ -69,8 +69,8 @@ const ProductCollection = ({sx,Collectiontitle,data,setQuickView} : {
             </Box> */}
             <Box
                 sx={{
-                display: {
-                    xs: "flex",
+                display: { 
+                    xs: "flex",  
                     // md: 'none'
                 }
             }}>

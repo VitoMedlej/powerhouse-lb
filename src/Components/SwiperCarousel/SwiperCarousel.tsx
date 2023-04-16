@@ -14,7 +14,7 @@ const SwiperCarousel = ({data,      handleQuickView}:any) => {
         width: '100%',
         maxWidth: 'lg',
         margin: '1em auto',
-        display: {
+        display: { 
             xs: 'flex'
         },
         height: '100%'
@@ -34,8 +34,8 @@ const SwiperCarousel = ({data,      handleQuickView}:any) => {
             breakpoints={{
                 
                 200: {
-                    width: 310,
-                    slidesPerView: 1
+                    width: 200,
+                    slidesPerView: 2
                 },
                 768: {
                     width: 768,

@@ -52,9 +52,9 @@ const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,classN
             sx={{
                 boxShadow:'1px 1px 3px #eeeeee',
             position: 'relative',
-            minHeight: '440px',
-            maxHeight: '640px',
-            maxWidth:'500px',
+            minHeight: {lg:"440px", xs:"400px"},
+            maxHeight: {lg:"640px", xs:"400px"},
+            maxWidth:{lg:"500px", xs:"200px"},
             width: '100%',
             overflow: 'hidden',
             ...sx,
@@ -75,7 +75,7 @@ const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,classN
                     position: 'relative',
                    
                 }}>
-                <Box sx={{height:'350px'}}>
+                <Box sx={{height:{lg:"350px", xs:"200px"}}}>
                     <img
                     onClick={handleClick}
                     style={{maxHeight:'400px'}}
@@ -147,17 +147,17 @@ const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,classN
                     width:'100%',
                     // wordBreak:'break-all',
                     mt: '.25em',
-                    fontSize: '1em'
+                    fontSize: {lg:'1em',xs:'.5em'}
                 }}>{title}</Typography>
 
                 <span className='gray' style={{fontSize:'.76em'}}>
                     {category}
                     </span>
-            <Box sx={{mx:'.15em',justifyContent:'space-between'}} className='flexed'>
+            <Box sx={{mx:'.15em',justifyContent:'space-between',display:{xs:'block'} }} className='flexed'>
                 <Typography
                     className='clr'
                     sx={{
-                    fontSize: '1em'
+                    fontSize: {lg:'1em',xs:'.5em'}
                 }}>${price}</Typography>
                 {/* boxShadow:'1px 1px 3px #0000005e', */}
                 {/* <IconButton
@@ -172,9 +172,9 @@ const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,classN
                 sx={{':hover':{background:'#935525',color:'white',border:'1px solid #935525'}}}>
                        <Typography
                    className='flex items-center'
-                   sx={{fontSize:'.75em',gap:'.3em'}}>
+                   sx={{fontSize:'.5em',gap:'.3em' }}>
 
-                   add to cart <ShoppingCartIcon fontSize='small' />
+                   add to cart <ShoppingCartIcon sx={{fontSize:{lg:'5em', xs:'2em'} }} />
                    </Typography>
                 </Btn>
                 </Tooltip>

@@ -52,7 +52,7 @@ const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,classN
             sx={{
                 boxShadow:'1px 1px 3px #eeeeee',
             position: 'relative',
-            minHeight: {lg:"440px", xs:"300px"},
+            minHeight: {lg:"440px", xs:"350px"},
             maxHeight: {lg:"640px", xs:"200px"},
             maxWidth:{lg:"500px", xs:"200px"},
             width: '100%',

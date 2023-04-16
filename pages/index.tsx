@@ -3,8 +3,8 @@ import CategoryMenu from '../src/Components/HomeComponents/CategoryMenu/Category
 import MainCarousel from '../src/Components/HomeComponents/MainCarousel/MainCarousel';
 import WhatsApp from '../src/Components/HomeComponents/SocialLinks/WhatsApp';
 import ProductCollection from '../src/Components/HomeComponents/ProductCollection/ProductCollection';
-import FullscreenPoster from '../src/Components/HomeComponents/FullscreenPoster/FullscreenPoster';
-import CategoryList from '../src/Components/HomeComponents/CategoryList/CategoryList';
+// import FullscreenPoster from '../src/Components/HomeComponents/FullscreenPoster/FullscreenPoster';
+// import CategoryList from '../src/Components/HomeComponents/CategoryList/CategoryList';
 import Perks from '../src/Components/HomeComponents/Perks/Perks';
 import TopAd from '../src/Components/HomeComponents/TopAd/TopAd';
 import Navbar from '../src/Components/Navbar/Navbar';
@@ -13,10 +13,10 @@ import Navbar from '../src/Components/Navbar/Navbar';
 import QuickView from '../src/Components/Dialog/QuickView';
 import { useContext, useEffect, useState } from 'react';
 import {server} from '../src/Utils/Server' 
-import CategoryImages from '../src/Components/HomeComponents/CategoryImages/CategoryImages';
-import Btn from '../src/Components/Btn/Btn';
+// import CategoryImages from '../src/Components/HomeComponents/CategoryImages/CategoryImages';
+// import Btn from '../src/Components/Btn/Btn';
 import { IProduct } from '../src/Types/Types';
-import { Typography } from '@mui/material';
+// import { Typography } from '@mui/material';
 import { Categories } from './_app';
 
 export default function Home({data :staticData,category}:{category:any,data:any}) {
@@ -24,8 +24,14 @@ export default function Home({data :staticData,category}:{category:any,data:any}
   const [quickView, setQuickView] = useState<{isOpen:boolean,productId:null | string}>({isOpen:false,productId:null})
   const [data,setData] = useState<IProduct[]>(staticData)
   const [cates,setCates] = useContext(Categories);
+  const coldStart = async () => {
+    const req = await fetch(`${server}/api/cold`)
+    const res = await req.json()
+    console.log('res: ', res);
+  }
   useEffect(() => {
-    setCates(category);
+    coldStart()
+    // setCates(category);
   }, [])
 
     return (
@@ -125,7 +131,7 @@ export async function  getStaticProps() {
     props: {
         // data : res.data.reverse(),
         data : res.data,
-        category : res.category
+        // category : res.category
     },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in

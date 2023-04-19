@@ -61,10 +61,24 @@ export default function Navbar() {
 
                 boxShadow: 'none'
             }}position="static">
+                <> 
                 <Toolbar sx={{
                     position: 'relative'
                 }}>
-               
+                  {/* <IconButton
+                        
+                        onClick={()=>setOpen(!open)}
+                        size="large"
+                        edge="start"
+                        // color="inherit"
+                        aria-label="menu"
+                        sx={{
+                            color:'white',
+                            margin:'0.1em',
+                            display:{sm:'none'},
+                    }}>
+                        <MenuIcon/>
+                    </IconButton> */}
                     <Box
                         sx={{
                         mx:{sm:'1em'},
@@ -74,6 +88,7 @@ export default function Navbar() {
                         // ,
                         maxWidth:'180px'
                     }}>
+                          
                         <Link href='/' color='inherit'>
                             <img
                             className='img'
@@ -81,6 +96,7 @@ export default function Navbar() {
                             alt="Powerhouse electronics eshop logo"/>
                         </Link>
                     </Box>
+                    
                     <Box
                         sx={{
                         width: '100%',
@@ -100,14 +116,14 @@ export default function Navbar() {
                                 justifyContent: 'end',}}
                             className='flex right'>
 
-                            <IconButton
+                            {/* <IconButton
                              sx={{display:{xs:'flex',sm:'none'},color:'white'}}
                             onClick={()=>setOpenModal(!openModal)}
                             color='inherit'>
  
                              <SearchOutlinedIcon/>
  
-                         </IconButton> 
+                         </IconButton>  */}
 
 
                         <IconButton 
@@ -156,6 +172,21 @@ export default function Navbar() {
 
                     </Box>
                 </Toolbar>
+
+                <Toolbar sx={{ display:{xs:'flex',sm:'none'},}}>
+                <Box sx={{
+                    
+                    width:'100%'}}>
+                <SearchInput
+                            onSubmit={handleSearch}
+                            value={q}
+                            setValue={setQ}
+                            sx={{width:'100%',
+                               }}/>
+                            </Box>
+                </Toolbar>
+                </>
+
             </AppBar>
             <SearchModal openModal={openModal} setOpenModal={setOpenModal}/>
         </Box>

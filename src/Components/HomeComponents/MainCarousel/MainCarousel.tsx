@@ -33,7 +33,9 @@ const MainCarousel = () => {
                 modules={[Autoplay, Navigation]}
                 className="mySwiper swiper">
 
-                {[{img:`https://ucarecdn.com/cb04f440-c3b4-4943-9650-343d079f8667/49da7d1c9283e95770851ecada351a029f037a57_HMDWebsiteBanner01.png`},{img:'https://ucarecdn.com/a021bc32-1e3a-418d-905d-37c8236dd0dd/Banner.png',className:'contain'},
+                {[{img:`https://ucarecdn.com/cb04f440-c3b4-4943-9650-343d079f8667/49da7d1c9283e95770851ecada351a029f037a57_HMDWebsiteBanner01.png`}
+                
+                // ,{img:'https://ucarecdn.com/a021bc32-1e3a-418d-905d-37c8236dd0dd/Banner.png',className:'contain'},
                 // {img:'https://cdn.shopify.com/s/files/1/0549/1385/9821/files/Christmas_2022_Banner_1.jpg?v=1671886210'}
             ].map((item) => {
 
@@ -50,7 +52,8 @@ const MainCarousel = () => {
 
                             <img
             
-                                className={`img pointer ${item?.className}`}
+                                // className={`img pointer ${item?.className}`}
+                                className={`img pointer `}
                                 src={`${item.img}`}
                                 alt="Main Carousel Image"/>
                         </Box>

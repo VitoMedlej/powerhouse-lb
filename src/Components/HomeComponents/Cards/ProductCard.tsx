@@ -54,7 +54,7 @@ const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,classN
             position: 'relative',
             minHeight: {lg:"440px", xs:"350px"},
             maxHeight: {lg:"640px", xs:"200px"},
-            maxWidth:{lg:"500px", xs:"200px"},
+            maxWidth:{lg:"500px", xs:"300px"},
             width: '100%',
             overflow: 'hidden',
             ...sx,

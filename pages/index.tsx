@@ -74,7 +74,7 @@ export default function Home({data :staticData,category}:{category:any,data:any}
       <Navbar />
       <CategoryMenu category={category}/>
       <main>
-      <MainCarousel/>
+      {/* <MainCarousel/> */}
       {/* <CategoryImages/> */}
       <WhatsApp/>
       <ProductCollection data={data && data.slice(0,20)} setQuickView={setQuickView} Collectiontitle='Latest Products '/>      

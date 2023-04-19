@@ -145,6 +145,12 @@ h1, h2, h3, h4, p {
   margin: 0 1em !important;
 }
 
+@media (max-width: 600px) {
+  .swiper-slide {
+    width: 50% !important;
+    margin: 0 !important;
+  }
+}
 .scale img {
   transition: 0.2s ease;
 }
@@ -280,8 +286,6 @@ button[disabled] {
     padding: 0.75em 0;
     width: 100% !important;
   }
-
- 
 }
 @media (min-width: 768px) {
   .site-footer__links ul {

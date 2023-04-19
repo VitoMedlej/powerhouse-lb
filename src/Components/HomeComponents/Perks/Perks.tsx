@@ -3,6 +3,7 @@ import React from 'react'
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import MusicNoteIcon from '@mui/icons-material/MusicNote';
 
 const Perks = () => {
     return (
@@ -73,7 +74,38 @@ const Perks = () => {
                 </Box>
 
 
+                <Box
 
+sx={{
+    display: 'flex',
+    gap: '.5em',
+    flexDirection: 'row'
+}}>
+<Box className='flexed' sx={{width:'30px',color:'white',filter:'invert(1)'}}>
+    {/* <MusicNoteIcon sx={{ color: '#fff' }} />
+     */}
+     <img src="https://cdn-icons-png.flaticon.com/512/1946/1946552.png" alt="" className="img" />
+</Box>
+<Box
+    sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column'
+    }}>
+    {<a className='white' target={`_blank`} style={{textDecoration:"none"}} rel='noreferrer' href={"https://www.tiktok.com/@powerhouse37"}>
+
+
+        <Typography
+            sx={{
+                fontSize: '1.1em'
+            }}>TikTok</Typography>
+    </a>
+
+    }
+</Box>
+
+</Box>
 
 
                 <Box

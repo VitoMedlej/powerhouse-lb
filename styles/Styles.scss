@@ -147,6 +147,12 @@ object-fit:cover
 .swiper-wrapper1 {
     margin :0 1em  !important;
 }
+@media (max-width:600px) {
+    .swiper-slide  {
+        width : 50% !important;
+        margin: 0 !important;
+    }
+}
 .scale {
     img {
         transition: .2s ease;

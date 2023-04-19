@@ -29,21 +29,27 @@ const SwiperCarousel = ({data,      handleQuickView}:any) => {
                 disableOnInteraction: true,
               }}
               navigation={false}
-            spaceBetween={8}
+            spaceBetween={1.5}
             modules={[FreeMode,Autoplay, Pagination]}
-            breakpoints={{
+              slidesPerView={2}
+        //         breakpoints={{
                 
-                200: {
-                    width: 200,
-                    slidesPerView: 2
-                },
-                768: {
-                    width: 768,
-                    slidesPerView: 2
-                },
+        //         200: {
+        //             width: 200,
+        //             slidesPerView: 2
+        //         },
+        //         768: {
+        //             width: 768,
+        //             slidesPerView: 2
+        //         },
+        //         1020: {
+        //             width: 1020,
+        //             slidesPerView: 3
+        //         },
              
                
-        }}>
+        // }}
+        >
 
             {data && data.length>0 && data.map((item:any) => {
                     if (!item.title) return
@@ -62,6 +68,7 @@ const SwiperCarousel = ({data,      handleQuickView}:any) => {
                         title={property.title}
                         location={property.location}/> */}
                          <ProductCard 
+                        //  sx={{width:'50% !important',margin : '0 !important'}}
                         handleQuickView={handleQuickView}
                          title={item.title}
                          images={item.images}

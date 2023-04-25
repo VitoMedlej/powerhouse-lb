@@ -47,7 +47,7 @@ const Footer = () => (
             
             <li><a href="https://www.facebook.com/profile.php?id=100088170621504" target="_blank" rel="noreferrer" >Facebook</a></li>
 
-            <li><a href="https://www.instagram.com/powerhouse_european" target="_blank" rel="noreferrer" >@power_house_european</a></li>
+            <li><a href="https://www.instagram.com/powerhouse_european" target="_blank" rel="noreferrer" >@powerhouse_european</a></li>
             <li><a href={'https://wa.me/70873045'} rel="noreferrer" target='_blank' >{` +961 70873045`}</a></li>
           </ul>
         </div>

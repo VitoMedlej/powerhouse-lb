@@ -147,8 +147,7 @@ h1, h2, h3, h4, p {
 
 @media (max-width: 600px) {
   .swiper-slide {
-    width: 50% !important;
-    margin: 0 !important;
+    width: 50% !important; 
   }
 }
 .scale img {

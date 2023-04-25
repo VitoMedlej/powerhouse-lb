@@ -56,7 +56,7 @@ const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,classN
             maxHeight: {lg:"640px", xs:"200px"},
             maxWidth:{lg:"500px", xs:"300px"},
             width: '100%',
-            overflow: 'hidden',
+            overflow: 'hidden', 
             ...sx,
             ':hover': {
                 '& .productOptions': {
@@ -92,6 +92,7 @@ const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,classN
                         transform: {
                             sm: 'translateY(50%)'
                         },
+                        
                         display: {
                             xs: 'flex',
                             sm: ' none'

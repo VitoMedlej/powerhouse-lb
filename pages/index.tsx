@@ -18,16 +18,38 @@ import {server} from '../src/Utils/Server'
 import { IProduct } from '../src/Types/Types';
 // import { Typography } from '@mui/material';
 import { Categories } from './_app';
+export const getAll = async (endpoint?:string,limit?:number,category?:string,search?:string,skip?:number,totalCount?:boolean) => {
+  try {
 
+    const req = await fetch(`${server}/api/${endpoint ? endpoint : 'home' }?limit=${limit || 100}&category=${category ? category : ''}&search=${search ? search : ''}&skip=${skip}&totalCount=${totalCount === true ? 'true' : 'false' }`)
+    const res = await req.json()
+  
+    if (res) {
+      return res
+    }
+    return null
+  }
+  catch(er) {
+    console.log('er getAll: ', er);
+
+  }
+}
 export default function Home({data :staticData,category}:{category:any,data:any}) {
   
   const [quickView, setQuickView] = useState<{isOpen:boolean,productId:null | string}>({isOpen:false,productId:null})
-  const [data,setData] = useState<IProduct[]>(staticData)
+  const [data,setData] = useState<IProduct[] | any>(staticData)
   const [cates,setCates] = useContext(Categories);
   const coldStart = async () => {
     const req = await fetch(`${server}/api/cold`)
     const res = await req.json()
-    console.log('res: ', res);
+    if (!data && data?.length < 0) {
+      const req = await getAll()
+      if (req && req?.data && req?.data?.length > 0)
+        {
+          console.log('req: ', req);
+          setData(req.data)
+      }
+    }
   }
   useEffect(() => {
     coldStart()
@@ -96,22 +118,7 @@ export default function Home({data :staticData,category}:{category:any,data:any}
     </>
   )
 }
-export const getAll = async (endpoint?:string,limit?:number,category?:string,search?:string,skip?:number,totalCount?:boolean) => {
-  try {
 
-    const req = await fetch(`${server}/api/${endpoint ? endpoint : 'home' }?limit=${limit || 100}&category=${category ? category : ''}&search=${search ? search : ''}&skip=${skip}&totalCount=${totalCount === true ? 'true' : 'false' }`)
-    const res = await req.json()
-  
-    if (res) {
-      return res
-    }
-    return null
-  }
-  catch(er) {
-    console.log('er getAll: ', er);
-
-  }
-}
 export async function  getStaticProps() {
   // const res = await fetch('https://.../posts')
   // const posts = await res.json()

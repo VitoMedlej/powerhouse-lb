@@ -42,14 +42,14 @@ export default function Home({data :staticData,category}:{category:any,data:any}
   const coldStart = async () => {
     const req = await fetch(`${server}/api/cold`)
     const res = await req.json()
-    if (!data && data?.length < 0) {
-      const req = await getAll()
-      if (req && req?.data && req?.data?.length > 0)
-        {
-          console.log('req: ', req);
-          setData(req.data)
-      }
-    }
+    // if (!data && data?.length < 0) {
+    //   const req = await getAll()
+    //   if (req && req?.data && req?.data?.length > 0)
+    //     {
+    //       console.log('req: ', req);
+    //       setData(req.data)
+    //   }
+    // }
   }
   useEffect(() => {
     coldStart()
@@ -119,7 +119,8 @@ export default function Home({data :staticData,category}:{category:any,data:any}
   )
 }
 
-export async function  getStaticProps() {
+export async function  getServerSideProps() {
+  // export async function  getStaticProps() {
   // const res = await fetch('https://.../posts')
   // const posts = await res.json()
   try {
@@ -143,7 +144,7 @@ export async function  getStaticProps() {
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
     // - At most once every 10 seconds
-    revalidate: 500, // In seconds
+    // revalidate: 500, // In seconds
   }
 }
 catch(errr){

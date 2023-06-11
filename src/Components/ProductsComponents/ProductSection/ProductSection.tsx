@@ -15,7 +15,8 @@ const ProductSection = ({data,count,handlePagination,setQuickView}:{count:number
         // handlePagination
     // }, [third])
     const router = useRouter()
-    const counter = router.query.products === 'products' 
+    const counter = router.query.products === 'products';
+    const search = router?.query?.search;
     const counted = counter ? count / 12 < 0 ? 1 : Math.ceil(count / 12) : Math.ceil(data?.length / 12)
     return (
         <Box sx={{width:{xs:'100%',md:'80%'}}}> 
@@ -39,7 +40,7 @@ const ProductSection = ({data,count,handlePagination,setQuickView}:{count:number
         // setPage(val)
         handlePagination(val)
     }}
-    sx={{my:3}} count={counted > 1 ? counted : 1 } className='flex center ' />
+    sx={{my:3}} count={search  ? 1 : counted > 1 ? counted : 1 } className='flex center ' />
 
         </Box>
     )

@@ -37,7 +37,7 @@ const Index = ({data,count}:any) => {
  const neverUseMe = async  () => {
   const data =  await getAll('getdata',80,`${category}`,`${search}`,0,true)
   // const res = await data.json()
-  // console.log('res: ', res);
+  console.log('res: NUM ', data.length);
   if (data) {
     setProducts(data?.products)
     setTotalCount(data?.count)
@@ -45,7 +45,7 @@ const Index = ({data,count}:any) => {
 }
  useEffect(() => {
   neverUseMe()
- }, [category])
+ }, [category,search])
  const handlePagination =  async (val:number) => { 
  try {
   // router.push('/products')

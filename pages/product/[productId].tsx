@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Breadcrumb from '../../src/Components/Breadcrumbs/Breadcrumb'
 import { Box, Button, Divider, IconButton, Tooltip, Typography } from '@mui/material'
 import ProductCarousel from '../../src/Components/ProductCarousel/ProductCarousel'
-import SelectOneForm from '../../src/Components/ProductsComponents/Filter/Forms/SelectOneForm'
+// import SelectOneForm from '../../src/Components/ProductsComponents/Filter/Forms/SelectOneForm'
 // import { QuantityPicker } from 'react-qty-picker';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ProductCollection from '../../src/Components/HomeComponents/ProductCollection/ProductCollection'
@@ -13,7 +13,7 @@ import Perks from '../../src/Components/HomeComponents/Perks/Perks'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import ItemTabs from '../../src/Components/ItemComponents/ItemTabs'
-import Link from 'next/link'
+// import Link from 'next/link'
 import Btn from '../../src/Components/Btn/Btn'
 import { QuantityPicker } from '../../src/Components/QuantityPicker/QuantityPicker'
 import useCart from '../../src/Hooks/useCart'
@@ -31,7 +31,7 @@ const btnStyle = {
 
 const Index = ({data,collection}:any) => {
   const {addToCart} = useCart()
-  const router = useRouter()
+  const router = useRouter();
   const item = router.query?.title || router.query?.productId|| 'Item'
   return (
   <>
@@ -75,7 +75,7 @@ const Index = ({data,collection}:any) => {
     <Divider/>
     <Box sx={{justifyContent:'space-between',margin:'0 auto',maxWidth:'lg',display:'flex',px:'1em',pt:'1em',gap:'2em',flexWrap:'wrap'}}>
       <Box sx={{width:{xs:'100%',md:'45%'},maxWidth:'600px'}}>
-                <ProductCarousel fullscreen videoUrl={data?.videoUrl && data?.videoUrl?.length > 1? data?.videoUrl : ''} video={data?.videoUrl && data?.videoUrl?.length > 1} images={data?.images} mw='600px'/>
+                <ProductCarousel fullscreen  videoUrl={data?.videoUrl && data?.videoUrl?.length > 1? data?.videoUrl : ''} video={data?.videoUrl && data?.videoUrl?.length > 1} images={data?.images} mw='600px'/>
       </Box>
       <Box sx={{width:{xs:'100%',md:'50%'}}}>
         <Typography sx={{fontSize:{xs:'1.8em',sm:'2.1em'},pb:'.5em',fontWeight:'500'}}>{data.title}</Typography>

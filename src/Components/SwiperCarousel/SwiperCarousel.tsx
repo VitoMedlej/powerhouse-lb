@@ -5,8 +5,8 @@ import { Box } from '@mui/material';
 import ProductCard from '../HomeComponents/Cards/ProductCard';
 
 
-const SwiperCarousel = ({data,      handleQuickView}:any) => {
-   
+const SwiperCarousel = ({data,  enableVideo,    handleQuickView}:any) => {
+    console.log('item: ', data);
     return (
         <Box
         sx={{
@@ -49,6 +49,7 @@ const SwiperCarousel = ({data,      handleQuickView}:any) => {
              
                
         // }}
+            
         >
 
             {data && data.length>0 && data.map((item:any) => {
@@ -68,6 +69,7 @@ const SwiperCarousel = ({data,      handleQuickView}:any) => {
                         title={property.title}
                         location={property.location}/> */}
                          <ProductCard 
+                         videoUrl={enableVideo ? item?.videoUrl: null}
                         //  sx={{width:'50% !important',margin : '0 !important'}}
                         handleQuickView={handleQuickView}
                          title={item.title}

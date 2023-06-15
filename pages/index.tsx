@@ -99,9 +99,9 @@ export default function Home({data :staticData,category}:{category:any,data:any}
       {/* <MainCarousel/> */}
       {/* <CategoryImages/> */}
       <WhatsApp/>
-      <ProductCollection data={data && data.slice(0,20)} setQuickView={setQuickView} Collectiontitle='Latest Products '/>      
+      <ProductCollection enableVideo data={data && data.slice(0,20)} setQuickView={setQuickView} Collectiontitle='Latest Products '/>      
       
-      <ProductCollection data={data && data.slice(20,30)} setQuickView={setQuickView} Collectiontitle='Top Sellers'/>      
+      <ProductCollection  data={data && data.slice(20,30)} setQuickView={setQuickView} Collectiontitle='Top Sellers'/>      
       {/* <FullscreenPoster img='https://contentgrid.thdstatic.com/hdus/en_US/DTCCOMNEW/fetch/NexGen/ContentPage/SBS22-ASP-Hero-DSK-A.png'/> */}
       <ProductCollection data={data && data.slice(30,45)} setQuickView={setQuickView} Collectiontitle='Recommended Products '/>      
       {/* <CategoryList/> */}

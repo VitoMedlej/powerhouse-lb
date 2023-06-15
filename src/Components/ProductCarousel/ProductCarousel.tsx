@@ -15,7 +15,6 @@ const ProductCarousel = ({images,fullscreen,video,videoUrl,mw} : {fullscreen?:bo
       let imagesArray : any= images?.map((str) => {
         return { img: str };
       });
-      console.log('      [{videoUrl},...imagesArray]: ',       [{videoUrl},...imagesArray]);
     return (
         <Swiper
             pagination={{
@@ -33,15 +32,17 @@ const ProductCarousel = ({images,fullscreen,video,videoUrl,mw} : {fullscreen?:bo
 
             {images && imagesArray && imagesArray.length>0 && [{videoUrl : videoUrl ? videoUrl : null },...imagesArray].map(product => {
 
-                if (!product?.videoUrl && !product?.img) return;
+                if (!product?.videoUrl && !product?.img ) return;
+                
                 return (
                   
                  <SwiperSlide style={{width : fullscreen && '100% !important' || 'auto'}} className={fullscreen ? 'full' : ''} key={product?.img}>
                         {product?.videoUrl && !product?.img && hasWindow ?
                             <Box sx={{ width: { xs: '100%', sm: '500px' } }}>
 
-
-                                <ReactPlayer loop width={'100%'} style={{
+                                <ReactPlayer
+                                muted 
+                                loop width={'100%'} style={{
                                     width: '100%',
                                 }} controls playing={true} url={`${videoUrl}`} />
 

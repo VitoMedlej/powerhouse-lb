@@ -147,9 +147,13 @@ h1, h2, h3, h4, p {
 
 @media (max-width: 600px) {
   .swiper-slide {
-    width: 50% !important; 
+    width: 50% !important;
   }
 }
+.full {
+  width: 100% !important;
+}
+
 .scale img {
   transition: 0.2s ease;
 }
@@ -245,6 +249,10 @@ footer .site-footer__bottom div p {
   flex-wrap: wrap !important;
 }
 
+.video {
+  min-width: 500px;
+}
+
 .pointer {
   cursor: pointer !important;
 }
@@ -275,6 +283,11 @@ button[disabled] {
   flex-direction: row !important;
 }
 
+@media (max-width: 499px) {
+  .video {
+    min-width: 290px;
+  }
+}
 @media (max-width: 768px) {
   .site-footer__links {
     align-items: center;

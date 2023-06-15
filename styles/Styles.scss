@@ -152,6 +152,9 @@ object-fit:cover
         width : 50% !important;  
     }
 }
+.full {
+    width: 100% !important;
+}
 .scale {
     img {
         transition: .2s ease;
@@ -257,6 +260,9 @@ footer {
 .wrap {
     flex-wrap: wrap !important;
 }
+.video {
+    min-width : 500px;
+}
 .pointer {
     cursor: pointer !important;
 }
@@ -279,6 +285,13 @@ button[disabled]{
 
 .row {
     flex-direction: row !important;
+}
+
+
+@media (max-width:499px) {
+    .video {
+        min-width : 290px;
+    }
 }
 @media (max-width: 768px) {
     .site-footer__links {

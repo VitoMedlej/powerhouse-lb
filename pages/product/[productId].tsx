@@ -75,7 +75,7 @@ const Index = ({data,collection}:any) => {
     <Divider/>
     <Box sx={{justifyContent:'space-between',margin:'0 auto',maxWidth:'lg',display:'flex',px:'1em',pt:'1em',gap:'2em',flexWrap:'wrap'}}>
       <Box sx={{width:{xs:'100%',md:'45%'},maxWidth:'600px'}}>
-                <ProductCarousel images={data?.images} mw='600px'/>
+                <ProductCarousel fullscreen videoUrl={data?.videoUrl && data?.videoUrl?.length > 1? data?.videoUrl : ''} video={data?.videoUrl && data?.videoUrl?.length > 1} images={data?.images} mw='600px'/>
       </Box>
       <Box sx={{width:{xs:'100%',md:'50%'}}}>
         <Typography sx={{fontSize:{xs:'1.8em',sm:'2.1em'},pb:'.5em',fontWeight:'500'}}>{data.title}</Typography>

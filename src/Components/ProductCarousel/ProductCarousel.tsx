@@ -39,7 +39,6 @@ const ProductCarousel = ({images,fullscreen,video,videoUrl,mw} : {fullscreen?:bo
                  <SwiperSlide style={{width : fullscreen && '100% !important' || 'auto'}} className={fullscreen ? 'full' : ''} key={product?.img}>
                         {product?.videoUrl && !product?.img && hasWindow ?
                             <Box sx={{ width: { xs: '100%', sm: '500px' } }}>
-
                                 <ReactPlayer
                                 muted 
                                 loop width={'100%'} style={{

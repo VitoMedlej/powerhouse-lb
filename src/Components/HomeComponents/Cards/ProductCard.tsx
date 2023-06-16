@@ -102,7 +102,7 @@ const ProductCard = ({title,videoUrl,_id,price,images,category,sx, handleQuickVi
                 width={'100%'} style={{
                     width: '100%',
                     height:'auto !important'
-                }}   playing={true} muted  url={`https://res.cloudinary.com/dweqbyja4/video/upload/v1686828709/HomepageEp6A3_Arcade_zhoohj.mp4`} />
+                }}   playing={true} muted  url={`${videoUrl}`} />
 
             </Box>)
                 }

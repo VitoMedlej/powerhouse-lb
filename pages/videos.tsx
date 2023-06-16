@@ -1,19 +1,21 @@
 
 import  Head from 'next/head'
-// import {useRouter} from 'next/router'
+import {useRouter} from 'next/router'
 import React, { useEffect, useState } from 'react'
 import Perks from '../src/Components/HomeComponents/Perks/Perks'
 import TopAd from '../src/Components/HomeComponents/TopAd/TopAd'
 import Navbar from '../src/Components/Navbar/Navbar'
-import { Box, Grid } from '@mui/material'
+import { Box, Grid, Typography } from '@mui/material'
 import ReactPlayer from 'react-player'
 import WhatsApp from '../src/Components/SocialMedia/Whatsapp'
 import { getAll } from '.'
+import Link from 'next/link'
+import { IProduct } from '../src/Types/Types'
 
 const Index = () => {
-    // const router= useRouter()
+    const router= useRouter()
     const [hasWindow, setHasWindow] = useState(false);
-    const [videos, setVideos] = useState<string[] | []> ([]);
+    const [videos, setVideos] = useState<IProduct[] | []> ([]);
     const fetchVideos = async () => {
           const res = await getAll('/videos',30,undefined,undefined,0,true)
           console.log('res: ', res);
@@ -71,19 +73,31 @@ const Index = () => {
                 fontSize: '1.75em',
                 fontWeight: '500'
             }}>View All Videos</Box>
-      <Grid container sx={{maxWidth:'lg',margin:'0 auto'}}>
+      <Grid container sx={{px:1,maxWidth:'lg',margin:'0 auto'}}>
       {hasWindow && 
       
       videos && videos?.length > 0 ?  videos.map(vid=>{
-        if (vid?.length < 2) return;
-      return <Grid key={vid} item xs={12} sm={6}>
+        if (!vid || !vid?.videoUrl || vid?.videoUrl?.length < 2) return;
+      return <Grid key={vid?._id} item xs={12} sm={6}>
         <Box sx={{ width: { xs: '100%', sm: '500px' } }}>
                                 <ReactPlayer
                                  
                                 loop width={'100%'} style={{
                                     width: '100%',
-                                }} controls playing={true} url={`${vid}`} />
+                                }} controls playing={true} url={`${vid?.videoUrl}`} />
 
+
+                        <Typography 
+                
+                        onClick={()=>{
+                          router.push(`/product/${vid?._id}?title=${`${vid?.title}`.substring(0,100).replace(/\s+/g, '-')}&category=${vid?.category ? vid?.category : 'products'}`)
+                        }}
+                        component={'h1'} sx={{cursor:'pointer',fontSize:'1.15em',fontWeight:'600',pt:.5,}}>
+                        {vid.title}
+                        </Typography>
+                        <Typography sx={{color:'#007000'}}>
+                       ${vid.price}
+                        </Typography>
            
                             </Box>
           </Grid>})

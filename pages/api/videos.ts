@@ -6,13 +6,15 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
 
 
        const ProductsCollection = await client.db("Power").collection("Products")
-       const docs = await ProductsCollection.distinct('videoUrl')
-    //   const products : any[] = [];
-    //    await docs.forEach((prod:any) =>{ 
-    //           products.push(prod);
-    //     })
-        if (docs.length > 0) { 
-            return res.status(200).json(docs);
+      //  const docs = await ProductsCollection.distinct('videoUrl')
+       const docs = await ProductsCollection.find({'videoUrl':{$exists: true,$ne: ""}}).limit(30)
+      
+      const products : any[] = [];
+       await docs.forEach((prod:any) =>{ 
+              products.push(prod);
+        })
+        if (products.length > 0) { 
+            return res.status(200).json(products);
           }
 }
 return res.status(404).json({success:false}); 

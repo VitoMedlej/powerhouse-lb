@@ -21,10 +21,15 @@ const CategoryMenu = ({category}:{category:string[] | undefined}) => {
 'electronics','kitchen appliances','small kitchen appliances','vaccum cleaners','tvs'
        ,'heaters'
  ,      'fans'
-,       'tools'
+,       'tools',
+'videos'
 
             ].map((item) => {
-                return <Box  sx={{cursor:'pointer'}} key={item} onClick={()=>router.push(`/category/${item.replace(/\s+/g, '-')}`)}>
+                return <Box  sx={{cursor:'pointer'}} key={item} onClick={()=> item !== 'videos' ? 
+                
+                router.push(`/category/${item.replace(/\s+/g, '-')}`) :  router.push(`/videos`)
+            
+            }>
                     {/* <Link key={item} > */}
                         <Typography sx={{color:"#4b4b4b",
                         textTransform: 'capitalize'

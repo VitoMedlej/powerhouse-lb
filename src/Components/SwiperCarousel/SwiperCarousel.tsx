@@ -6,7 +6,6 @@ import ProductCard from '../HomeComponents/Cards/ProductCard';
 
 
 const SwiperCarousel = ({data,  enableVideo,    handleQuickView}:any) => {
-    console.log('item: ', data);
     return (
         <Box
         sx={{

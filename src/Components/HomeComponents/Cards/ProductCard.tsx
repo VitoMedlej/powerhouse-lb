@@ -7,7 +7,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useRouter } from 'next/router';
 // import Link from 'next/link';
 // import {loadState, pushState, saveState} from '../../../Utils/LocalstorageFn';
-// import { CartContext } from '../../../../pages/_app';
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import useCart from '../../../Hooks/useCart';
 import Btn from '../../Btn/Btn';
 import ReactPlayer from 'react-player/lazy';
@@ -28,6 +28,7 @@ const ProductCard = ({title,videoUrl,_id,price,images,category,sx, handleQuickVi
     const {addToCart}= useCart()    
     const [currentImg,
         setCurrentImg] = useState(img)
+    const [playing,setPlay] = useState(false)
         const router = useRouter()
     const handleonMouseIn = () => {
         if (ref
@@ -82,6 +83,26 @@ const ProductCard = ({title,videoUrl,_id,price,images,category,sx, handleQuickVi
                     position: 'relative',
 
                 }}>
+                {videoUrl &&    <Box
+                        onClick={()=>setPlay(!playing)}
+                        sx={{
+                      
+                        zIndex:515125,
+                        right: '50%',
+                        bottom : '5%',
+                        transform: {
+                            sm: 'translateY(50%)'
+                        },
+                        cursor:'pointer',
+                        backgroundColor:'transparent',
+                        display: 
+                             'flex',
+                        flexDirection: 'column',
+                        position: 'absolute',
+                        gap: '.15em'
+                    }}>
+                            <PlayCircleOutlineIcon fontSize='large'/>
+                    </Box>}
                 <Box sx={{height:{lg:"350px", xs:"200px"}}}>
                  {!videoUrl ?   <img
                  
@@ -92,6 +113,7 @@ const ProductCard = ({title,videoUrl,_id,price,images,category,sx, handleQuickVi
                (hasWindow && <Box sx={{ width: { xs: '100%', sm: '500px' } }}>
 
                 <ReactPlayer
+                controls
                   onClick={handleClick}
                 fallback={<img
                     onClick={handleClick}
@@ -102,7 +124,7 @@ const ProductCard = ({title,videoUrl,_id,price,images,category,sx, handleQuickVi
                 width={'100%'} style={{
                     width: '100%',
                     height:'auto !important'
-                }}   playing={true} muted  url={`${videoUrl}`} />
+                }}   playing={playing} muted  url={`${videoUrl}`} />
 
             </Box>)
                 }
@@ -168,9 +190,9 @@ const ProductCard = ({title,videoUrl,_id,price,images,category,sx, handleQuickVi
                 className='titleMax'
                 onClick={()=>handleClick()}
                     sx={{
-                    
-                    pt: '.25em',
                     cursor:'pointer',
+                    pt: '.25em',
+              
                     width:'100%',
                     // wordBreak:'break-all',
                     mt: '.25em',

@@ -18,7 +18,7 @@ const CategoryMenu = ({category}:{category:string[] | undefined}) => {
         }}>
             {[
 
-'electronics','kitchen appliances','small kitchen appliances','vaccum cleaners','tvs'
+'electronics','kitchen appliances','home appliances','vaccum cleaners','tvs'
        ,'heaters'
  ,      'fans'
 ,       'tools',

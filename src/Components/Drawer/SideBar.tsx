@@ -77,7 +77,7 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
             </ListItemButton>
           </ListItem>
          }): */}
-       { ['electronics','kitchen appliances','small kitchen appliances','vaccum cleaners','tvs'
+       { ['electronics','kitchen appliances','home appliances','vaccum cleaners','tvs'
        ,'heaters'
  ,      'fans'
 ,       'tools',

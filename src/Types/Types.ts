@@ -12,6 +12,7 @@ export interface ICartItem {
     shortdesc ?: string;
 }
 export type IProduct = {
+        videoUrl ?: string ;
         title: string;
         price: number;
         _id: string;

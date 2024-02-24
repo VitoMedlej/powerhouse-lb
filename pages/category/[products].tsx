@@ -37,7 +37,6 @@ const Index = ({data,count}:any) => {
  const neverUseMe = async  () => {
   const data =  await getAll('getdata',80,`${category}`,`${search}`,0,true)
   // const res = await data.json()
-  console.log('res: NUM ', data.length);
   if (data) {
     setProducts(data?.products)
     setTotalCount(data?.count)

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import CategoryMenu from '../src/Components/HomeComponents/CategoryMenu/CategoryMenu'
-import MainCarousel from '../src/Components/HomeComponents/MainCarousel/MainCarousel';
+// import MainCarousel from '../src/Components/HomeComponents/MainCarousel/MainCarousel';
 import WhatsApp from '../src/Components/HomeComponents/SocialLinks/WhatsApp';
 import ProductCollection from '../src/Components/HomeComponents/ProductCollection/ProductCollection';
 // import FullscreenPoster from '../src/Components/HomeComponents/FullscreenPoster/FullscreenPoster';
@@ -18,6 +18,7 @@ import {server} from '../src/Utils/Server'
 import { IProduct } from '../src/Types/Types';
 // import { Typography } from '@mui/material';
 import { Categories } from './_app';
+// import VideoHero from '../src/Components/VideoHero/VideoHero';
 export const getAll = async (endpoint?:string,limit?:number,category?:string,search?:string,skip?:number,totalCount?:boolean) => {
   try {
 
@@ -96,12 +97,14 @@ export default function Home({data :staticData,category}:{category:any,data:any}
       <Navbar />
       <CategoryMenu category={category}/>
       <main>
+      {/* <VideoHero/> */}
+
       {/* <MainCarousel/> */}
       {/* <CategoryImages/> */}
       <WhatsApp/>
-      <ProductCollection data={data && data.slice(0,20)} setQuickView={setQuickView} Collectiontitle='Latest Products '/>      
+      <ProductCollection enableVideo data={data && data.slice(0,20)} setQuickView={setQuickView} Collectiontitle='Latest Products '/>      
       
-      <ProductCollection data={data && data.slice(20,30)} setQuickView={setQuickView} Collectiontitle='Top Sellers'/>      
+      <ProductCollection  data={data && data.slice(20,30)} setQuickView={setQuickView} Collectiontitle='Top Sellers'/>      
       {/* <FullscreenPoster img='https://contentgrid.thdstatic.com/hdus/en_US/DTCCOMNEW/fetch/NexGen/ContentPage/SBS22-ASP-Hero-DSK-A.png'/> */}
       <ProductCollection data={data && data.slice(30,45)} setQuickView={setQuickView} Collectiontitle='Recommended Products '/>      
       {/* <CategoryList/> */}

@@ -13,7 +13,7 @@ import ListItemText from '@mui/material/ListItemText';
 import { Categories, DrawerContext } from '../../../pages/_app';
 import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
 import CancelPresentationIcon from '@mui/icons-material/CancelPresentation';
-import CoffeeMakerIcon from '@mui/icons-material/CoffeeMaker';
+import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
 import { IconButton } from '@mui/material';import BlenderIcon from '@mui/icons-material/Blender';
 import { useRouter } from 'next/router';
 import CategoryIcon from '@mui/icons-material/Category';
@@ -77,18 +77,20 @@ export default function TemporaryDrawer({cates}:{cates:string[] | undefined}) {
             </ListItemButton>
           </ListItem>
          }): */}
-       { ['electronics','kitchen appliances','small kitchen appliances','vaccum cleaners','tvs'
+       { ['electronics','kitchen appliances','home appliances','vaccum cleaners','tvs'
        ,'heaters'
  ,      'fans'
-,       'tools'
+,       'tools',
+'videos'
       ].map((text, index) => {
           if (!text) return;
           return <ListItem
-          onClick={()=>router.push(`/category/${text}`)}
+          onClick={()=> text !== 'videos' ? router.push(`/category/${text}`) : router.push(`${text}`)}
           key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                {index % 2 === 0 ? <CategoryIcon /> : <PrecisionManufacturingIcon />}
+                
+                {text === 'videos' ? <OndemandVideoIcon/>:  index % 2 === 0 ? <CategoryIcon /> : <PrecisionManufacturingIcon />}
               </ListItemIcon>
               <ListItemText
               sx={{

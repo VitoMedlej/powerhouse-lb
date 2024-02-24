@@ -57,9 +57,13 @@ const Index = ({data,collection}:any) => {
 <meta property="og:title" content="Powerhouse electronics | Buy European electronics and home appliances in Lebanon" />
 <meta property="og:url" content="https://powerhouse-lb.com/" />
 <meta property="og:site_name" content="Power house" />
-<meta property="og:image" content="https://ucarecdn.com/7a7d64a9-6cb4-4cd2-b363-25b71a94ec3b/icon.jpg" />
+<meta property="og:image" content={data.images[0]}/>
 {/* <meta property="og:description" content="Power house provide a wide range of European electronics (stock and new)" /> */}
-     
+
+
+
+
+
 <meta name="og:description" content={`
         Powerhouse electronics is your destination to buy european electronics and home appliances online in Lebanon. Best online shopping store for the latest electronics and home appliances from all brands. We Deliver anywhere in Lebanon
         `} />
@@ -164,6 +168,8 @@ style={{width:'max-content',margin: '0 auto',color:'green',display: 'flex'}}
   )
 }
 
+
+
 export default Index
 
 export const getById = async (id:string) => {
@@ -188,7 +194,7 @@ export async function getServerSideProps(context:any) {
     if (!id) {
       throw 'Error'
     }
-    const data = await getById(`${id}`)
+    const data = await getById(`${id}`) 
     let items = await getAll('getdata',4,`${category}`)
     if (!data || !items || !items.products) {
       throw 'No data'

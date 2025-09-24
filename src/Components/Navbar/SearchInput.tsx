@@ -36,8 +36,10 @@ export default function CustomizedInputBase({sx,onSubmit,value,setValue}:{onSubm
         inputProps={{ 'aria-label': 'search products' }}
       />
       <IconButton
-        onClick={()=>        router.push(`/category/products?limit=80&search=${value}`)
-      }
+   onClick={() => 
+  router.push(`/category/products?limit=80&search=${encodeURIComponent(value)}`)
+}
+
       type="submit" className='searchIcon bg white trans' sx={{borderRadius:0,p: '10px' }} aria-label="search">
         <SearchIcon />
       </IconButton>

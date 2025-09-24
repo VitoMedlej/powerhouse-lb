@@ -6,8 +6,9 @@ import Btn from '../../Btn/Btn'
 import Link from 'next/link'
 import { IProduct } from '../../../Types/Types'
 
-const ProductCollection = ({sx,Collectiontitle,data,setQuickView} : {
+const ProductCollection = ({sx,enableVideo,Collectiontitle,data,setQuickView} : {
     Collectiontitle: string,
+    enableVideo?:boolean,
     data: IProduct[] | null,
     sx ?: any;
     setQuickView ?: Dispatch<SetStateAction<{
@@ -75,6 +76,7 @@ const ProductCollection = ({sx,Collectiontitle,data,setQuickView} : {
                 }
             }}>
                 <SwiperCarousel
+                enableVideo={enableVideo}
                       handleQuickView={handleQuickView}
                 data={data && data.length >0 && data?.slice(0,20)}/>
             </Box>

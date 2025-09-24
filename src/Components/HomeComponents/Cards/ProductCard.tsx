@@ -1,5 +1,5 @@
 import {Box, IconButton, Tooltip, Typography} from '@mui/material'
-import {useContext, useState} from 'react'
+import {useEffect, useState} from 'react'
 import {useRef} from 'react'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
@@ -7,17 +7,19 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useRouter } from 'next/router';
 // import Link from 'next/link';
 // import {loadState, pushState, saveState} from '../../../Utils/LocalstorageFn';
-// import { CartContext } from '../../../../pages/_app';
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import useCart from '../../../Hooks/useCart';
 import Btn from '../../Btn/Btn';
+import ReactPlayer from 'react-player/lazy';
 const defaultImages = ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQTvTcD234f-GRtvhN-xdfrqckgfNZbgS6fRdIeAQ-vBdHlkvqjmM6MZQfmFBHpjxoc1Q&usqp=CAU']
-const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,className} : {
+const ProductCard = ({title,videoUrl,_id,price,images,category,sx, handleQuickView,className} : {
     className?: string,
     handleQuickView ?: (id: string)=> void;
     sx?: any,
     title: string;
     price: number;
     _id: string;
+    videoUrl ?: string;
     images: string[] | any[];
     category: string;
 }) => {
@@ -26,6 +28,7 @@ const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,classN
     const {addToCart}= useCart()    
     const [currentImg,
         setCurrentImg] = useState(img)
+    const [playing,setPlay] = useState(false)
         const router = useRouter()
     const handleonMouseIn = () => {
         if (ref
@@ -43,7 +46,12 @@ const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,classN
         router.push(`/product/${_id}?title=${`${title}`.substring(0,100).replace(/\s+/g, '-')}&category=${category ? category : 'products'}`)
         
     }
-   
+    const [hasWindow, setHasWindow] = useState(false);
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+          setHasWindow(true);
+        }
+      }, []);
     return (
         <Box
         // onClick={()=>router.push('/product/product-name')}
@@ -73,13 +81,53 @@ const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,classN
                 <Box
                     sx={{
                     position: 'relative',
-                   
+
                 }}>
+                {videoUrl &&    <Box
+                        onClick={()=>setPlay(!playing)}
+                        sx={{
+                      
+                        zIndex:515125,
+                        right: '50%',
+                        bottom : '5%',
+                        transform: {
+                            sm: 'translateY(50%)'
+                        },
+                        cursor:'pointer',
+                        backgroundColor:'transparent',
+                        display: 
+                             'flex',
+                        flexDirection: 'column',
+                        position: 'absolute',
+                        gap: '.15em'
+                    }}>
+                            <PlayCircleOutlineIcon fontSize='large'/>
+                    </Box>}
                 <Box sx={{height:{lg:"350px", xs:"200px"}}}>
-                    <img
+                 {!videoUrl ?   <img
+                 
                     onClick={handleClick}
                     style={{maxHeight:'400px'}}
-                    ref={ref} src={ currentImg} className='img contain pointer' alt="Product Image"/>
+                    ref={ref} src={currentImg} className='img contain pointer' alt="Product Image"/>
+                :
+               (hasWindow && <Box sx={{ width: { xs: '100%', sm: '500px' } }}>
+
+                <ReactPlayer
+                controls
+                  onClick={handleClick}
+                fallback={<img
+                    onClick={handleClick}
+                    style={{maxHeight:'400px'}}
+                    ref={ref} src={currentImg} className='img contain pointer' alt="Product Image"/>}
+                loop
+                height={'auto !important'}
+                width={'100%'} style={{
+                    width: '100%',
+                    height:'auto !important'
+                }}   playing={playing} muted  url={`${videoUrl}`} />
+
+            </Box>)
+                }
                     </Box>
                     <Box
                         className='productOptions'
@@ -142,9 +190,9 @@ const ProductCard = ({title,_id,price,images,category,sx, handleQuickView,classN
                 className='titleMax'
                 onClick={()=>handleClick()}
                     sx={{
-                    
-                    pt: '.25em',
                     cursor:'pointer',
+                    pt: '.25em',
+              
                     width:'100%',
                     // wordBreak:'break-all',
                     mt: '.25em',

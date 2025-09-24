@@ -2,10 +2,19 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import {FreeMode,Autoplay, Pagination} from "swiper";
 import 'swiper/css';
 import { Box } from '@mui/material';
+import ReactPlayer from 'react-player'
+import {  useEffect, useState } from 'react';
 
-
-const ProductCarousel = ({images,mw} : {images: string[],mw ?: string}) => {
-   
+const ProductCarousel = ({images,fullscreen,video,videoUrl,mw} : {fullscreen?:boolean,video?:boolean,videoUrl?:string,images: string[],mw ?: string}) => {
+    const [hasWindow, setHasWindow] = useState(false);
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+          setHasWindow(true);
+        }
+      }, []);
+      let imagesArray : any= images?.map((str) => {
+        return { img: str };
+      });
     return (
         <Swiper
             pagination={{
@@ -21,13 +30,35 @@ const ProductCarousel = ({images,mw} : {images: string[],mw ?: string}) => {
             modules={[FreeMode,Autoplay, Pagination]}
          >
 
-            {images && images.length>0 && images.map(product => {
+            {images && imagesArray && imagesArray.length>0 && [{videoUrl : videoUrl ? videoUrl : null },...imagesArray].map(product => {
 
-                return <SwiperSlide key={product}>
-                            <Box sx={{display:'flex',margin:'0 auto',maxWidth:`${mw || '200px'}`}}>
-                                <img className='img' src={product.length > 4 ? product :'https://img.kpopmap.com/2019/07/unnamed83.jpg' }alt=" product carousel img" />
+                if (!product?.videoUrl && !product?.img ) return;
+                
+                return (
+                  
+                 <SwiperSlide style={{width : fullscreen && '100% !important' || 'auto'}} className={fullscreen ? 'full' : ''} key={product?.img}>
+                        {product?.videoUrl && !product?.img && hasWindow ?
+                            <Box sx={{ width: { xs: '100%', sm: '500px' } }}>
+                                <ReactPlayer
+                                muted 
+                                loop width={'100%'} style={{
+                                    width: '100%',
+                                }} controls playing={true} url={`${videoUrl}`} />
+
+           
                             </Box>
-                </SwiperSlide>
+
+:  (product?.img?.length > 4 && product?.img && <Box sx={{ display: 'flex', margin: '0 auto',width:'100%', maxWidth: `${mw || '200px'}` }}>
+<img className='img' src={product?.img?.length > 4 && product?.img } alt=" product carousel img" />
+</Box>)
+                         }
+                    </SwiperSlide>
+
+
+            
+                
+                )
+                
 
             })
 }

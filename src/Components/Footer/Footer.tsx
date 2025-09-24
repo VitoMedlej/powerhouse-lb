@@ -43,11 +43,11 @@ const Footer = () => (
             <li><a href="#"> Lebanon/Beirut Online</a></li>
 
             <li>
-              <a href="https://www.facebook.com/profile.php?id=100088170621504" target="_blank" rel="noreferrer" >
+              <a href="https://www.facebook.com/online.european.outlet/" target="_blank" rel="noreferrer" >
                 <img className='img' src='https://ucarecdn.com/d77856af-ef62-40fd-97c5-60bbb0cb0098/fb.png' style={{ width: 20}}/> Facebook</a>
             </li>
 
-            <li><a href="https://www.instagram.com/powerhouse_european" target="_blank" rel="noreferrer" >
+            <li><a href="https://instagram.com/power_house_european" target="_blank" rel="noreferrer" >
             <img className='img' src='https://ucarecdn.com/114fe16a-c2f7-49c6-90ed-cc30336768f8/insta.png' style={{ width: 20}}/> Instagram</a>
             </li>
 

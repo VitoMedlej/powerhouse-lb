@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Breadcrumb from '../../src/Components/Breadcrumbs/Breadcrumb'
 import { Box, Button, Divider, IconButton, Tooltip, Typography } from '@mui/material'
 import ProductCarousel from '../../src/Components/ProductCarousel/ProductCarousel'
-import SelectOneForm from '../../src/Components/ProductsComponents/Filter/Forms/SelectOneForm'
+// import SelectOneForm from '../../src/Components/ProductsComponents/Filter/Forms/SelectOneForm'
 // import { QuantityPicker } from 'react-qty-picker';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ProductCollection from '../../src/Components/HomeComponents/ProductCollection/ProductCollection'
@@ -13,7 +13,7 @@ import Perks from '../../src/Components/HomeComponents/Perks/Perks'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import ItemTabs from '../../src/Components/ItemComponents/ItemTabs'
-import Link from 'next/link'
+// import Link from 'next/link'
 import Btn from '../../src/Components/Btn/Btn'
 import { QuantityPicker } from '../../src/Components/QuantityPicker/QuantityPicker'
 import useCart from '../../src/Hooks/useCart'
@@ -31,7 +31,7 @@ const btnStyle = {
 
 const Index = ({data,collection}:any) => {
   const {addToCart} = useCart()
-  const router = useRouter()
+  const router = useRouter();
   const item = router.query?.title || router.query?.productId|| 'Item'
   return (
   <>
@@ -57,9 +57,13 @@ const Index = ({data,collection}:any) => {
 <meta property="og:title" content="Powerhouse electronics | Buy European electronics and home appliances in Lebanon" />
 <meta property="og:url" content="https://powerhouse-lb.com/" />
 <meta property="og:site_name" content="Power house" />
-<meta property="og:image" content="https://ucarecdn.com/7a7d64a9-6cb4-4cd2-b363-25b71a94ec3b/icon.jpg" />
+<meta property="og:image" content={data.images[0]}/>
 {/* <meta property="og:description" content="Power house provide a wide range of European electronics (stock and new)" /> */}
-     
+
+
+
+
+
 <meta name="og:description" content={`
         Powerhouse electronics is your destination to buy european electronics and home appliances online in Lebanon. Best online shopping store for the latest electronics and home appliances from all brands. We Deliver anywhere in Lebanon
         `} />
@@ -75,7 +79,7 @@ const Index = ({data,collection}:any) => {
     <Divider/>
     <Box sx={{justifyContent:'space-between',margin:'0 auto',maxWidth:'lg',display:'flex',px:'1em',pt:'1em',gap:'2em',flexWrap:'wrap'}}>
       <Box sx={{width:{xs:'100%',md:'45%'},maxWidth:'600px'}}>
-                <ProductCarousel images={data?.images} mw='600px'/>
+                <ProductCarousel fullscreen  videoUrl={data?.videoUrl && data?.videoUrl?.length > 1? data?.videoUrl : ''} video={data?.videoUrl && data?.videoUrl?.length > 1} images={data?.images} mw='600px'/>
       </Box>
       <Box sx={{width:{xs:'100%',md:'50%'}}}>
         <Typography sx={{fontSize:{xs:'1.8em',sm:'2.1em'},pb:'.5em',fontWeight:'500'}}>{data.title}</Typography>
@@ -164,6 +168,8 @@ style={{width:'max-content',margin: '0 auto',color:'green',display: 'flex'}}
   )
 }
 
+
+
 export default Index
 
 export const getById = async (id:string) => {
@@ -188,7 +194,7 @@ export async function getServerSideProps(context:any) {
     if (!id) {
       throw 'Error'
     }
-    const data = await getById(`${id}`)
+    const data = await getById(`${id}`) 
     let items = await getAll('getdata',4,`${category}`)
     if (!data || !items || !items.products) {
       throw 'No data'

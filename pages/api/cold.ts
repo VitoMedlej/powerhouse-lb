@@ -57,7 +57,6 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
     // {title:  'latest',data : latest} , {title:  'category',data : category}];
     // await docs.forEach( (doc:any) =>{
         // await data.forEach((product:any)=>{
-          // console.log('product: ', product);
         //   data.push(doc)
         // })
         // console.log('prod: ', prod);

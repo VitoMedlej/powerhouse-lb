@@ -27,6 +27,7 @@ const ProductSection = ({data,count,handlePagination,setQuickView}:{count:number
                          _id={i._id}
                          images={i.images}
                          title={i.title}
+                         videoUrl={i?.videoUrl}
                         price={i.price}
                         category={i.category}
                         handleQuickView={setQuickView}
